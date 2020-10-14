@@ -3,8 +3,8 @@
         <div class="column is-3">
             <div class="card">
                 <div class="card-image">
-                    <figure class="image">
-                        <img src="{{ p.thumbnail.url }}">
+                    <figure class="card image">
+                        <a href="{% url 'product_detail' p.category.slug p.slug %}"><img src="{{ p.thumbnail.url }}"></a>
                     </figure>
                 </div>
                 

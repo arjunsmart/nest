@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load humanize %}
+
 
 {% block title %}{{ product.title }} | {% endblock %}
 
@@ -18,35 +20,28 @@
 
         <div class="columns">
             <div class="column">
-                <div class="main-image">
+                <div class="main-image card">
                     <img :src="mainImage">
                 </div>
-            </div>
+            <br>
         
 
-        {% if product.images.all %}
-            <hr>
-            <div class="columns">
-                <div class="column is-3" v-for="image in images">
-                    <figure class="image is-128x128">
-                        <img :src="image.thumbnail" @click="changeMainImage(image.image)">
-                    </figure>
-                </div>
-            </div>
-        {% endif %}
+        
+    </div>
+    
         <hr>
         <div class="column">
             <div style="text-align: center;">
         <h1 class="title">{{ product.title }}</h1>
-        <h2 class="subtitle">₹{{ product.price }} </h2>
+        <h2 class="subtitle">₹{{ product.price|intcomma }} </h2>
     <p>Ratings : {% if product.get_rating == 0 %}No ratings yet{% else %}{{ product.get_rating|floatformat:1 }}{% endif %}</p>
 
 
         {% if product.description %}
-            <p>{{ product.description }}</p>
+            <p>Desc :{{ product.description }}</p>
         {% endif %}
 
-        <h2 class="subtitle">Add to cart</h2>
+        
     </div>
     
 
@@ -69,10 +64,10 @@
 
                                 <td>
                                     {% if product.in_cart %}
-                                        <p>Already in cart!</p>
+                                        <button class="button is-warning">In Cart</button>
                                     {% else %}
                                         {% if product.num_available > 0 %}
-                                            <button @click="addToCart({{ product.id }})" class="button is-success">Add to cart</button>
+                                            <button @click="addToCart({{ product.id }})" class="button is-success has-text-centered"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         {% else %}
                                             <p>The product is out of stock!</p>
                                         {% endif %}
@@ -96,10 +91,10 @@
 
                                     <td>
                                         {% if variant.in_cart %}
-                                            <p>Already in cart!</p>
+                                        <button class="button is-warning">In Cart</button>
                                         {% else %}
                                             {% if variant.num_available > 0 %}
-                                                <button @click="addToCart({{ variant.id }})" class="button is-success">Add to cart</button>
+                                                <button @click="addToCart({{ variant.id }})" class="button is-success has-text-centered"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                             {% else %}
                                                 <p>The product is out of stock!</p>
                                             {% endif %}
@@ -112,16 +107,18 @@
                 </div>
             </div>
         {% else %}
+        <div class="" style="text-align: center;">
             {% if product.in_cart %}
-                <p>Already in cart!</p>
+                <p class="button is-warning">In Cart</p>
             {% else %}
                 {% if product.num_available > 0 %}
-                    <button @click="addToCart({{ product.id }})" class="button is-success">Add to cart</button>
+                    <button  style="text-align: center;" @click="addToCart({{ product.id }})" class="button is-success"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                 {% else %}
                     <p>The product is out of stock!</p>
                 {% endif %}
             {% endif %}
         {% endif %}
+    </div>
 
         <article class="message is-success" v-if="showMessage">
             <div class="message-body">
@@ -130,8 +127,18 @@
         </article>
     </div>
 </div>
+{% if product.images.all %}
+            
+            <div class="columns">
+                <div class="column is-2 " v-for="image in images">
+                    <figure class="image card">
+                        <img :src="image.thumbnail" @click="changeMainImage(image.image)">
+                    </figure>
+                </div>
+            </div>
+        {% endif %}
 
-        <hr>
+        
 
         <h2 class="subtitle">Related products</h2>
 

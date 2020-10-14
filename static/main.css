@@ -92,6 +92,7 @@ article p {
     display: block;
     height: 80px;
     width: 100%;
+    cursor: pointer;
 }
 .card-content {
     text-align: center;
@@ -332,4 +333,24 @@ form ul {
         padding-bottom: 10px;
       }
       
-      
+      /*--term--*/
+
+      .fa{
+        padding-right: 10px;
+        font-size: 24px;
+        cursor: pointer;
+        }
+        .control.has-icons-left .icon.is-left{
+        left: 5px;
+        }
+        p{
+        font-size: 18px;
+        }
+        .is-success:hover{
+        background: #0f8438 !important;
+        }
+        @media(max-width: 768px){
+        .bottom p,.has-text-right{
+        text-align: center !important;
+        }
+        }
