@@ -72,7 +72,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'saulgadgets.urls'
+ROOT_URLCONF = 'farmersnest.urls'
 
 TEMPLATES = [
     {
@@ -93,7 +93,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'saulgadgets.wsgi.application'
+WSGI_APPLICATION = 'farmersnest.wsgi.application'
 
 
 # Database
@@ -105,6 +105,17 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+'''DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': '',
+        'USER': 'postgres',
+        'PASSWORD': 'Arjun@2020',
+        'HOST': '127.0.0.1',
+        'PORT': 5432
+    }
+}'''
 
 
 # Password validation
@@ -151,3 +162,12 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')'''
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+#smtp configurations
+
+EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST ='smtp.gmail.com'
+EMAIL_PORT =587
+EMAIL_USE_TLS =True
+EMAIL_HOST_USER ='knagaraju1980@gmail.com'
+EMAIL_HOST_PASSWORD = ''

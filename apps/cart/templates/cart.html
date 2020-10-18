@@ -5,8 +5,8 @@
 {% block content %}
 <div class="container">
     <div id="cartapp">
-    <div class="columns">           
-        <div class="column is-5">           
+    <div class="columns ">           
+        <div class="column is-5 ">           
                       
         <a href="{% url 'frontpage' %}" class="button is-info"><i class="fa fa-long-arrow-left"></i>
             Continue Shopping</a>
@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="columns">
-        <div class="column box"> 
+        <div class="column box mr-2"> 
             <h2 class="subtitle has-text-centered">Cart Details</h2>     
 
         {% if cart %}
@@ -96,7 +96,7 @@
                 {% endif %}
             </div>
                 </div>                
-                <div class="column box">
+                <div class="column box mr-2">
 
                 <h2 class="subtitle has-text-centered">Contact information</h2>
 
@@ -107,7 +107,7 @@
                             <label>First name</label>
     
                             <div class="control">
-                                <input class="input" type="text" name="first_name" v-model="first_name">
+                                <input class="input" type="text" name="first_name" v-model="first_name" required>
                             </div>
                         </div>
     
@@ -115,7 +115,7 @@
                             <label>Last name</label>
     
                             <div class="control">
-                                <input class="input" type="text" name="last_name" v-model="last_name">
+                                <input class="input" type="text" name="last_name" v-model="last_name" required>
                             </div>
                         </div>
     
@@ -123,7 +123,7 @@
                             <label>E-mail</label>
     
                             <div class="control">
-                                <input class="input" type="email" name="email" v-model="email">
+                                <input class="input" type="email" name="email" v-model="email" required>
                             </div>
                         </div>
     
@@ -131,7 +131,7 @@
                             <label>Phone</label>
     
                             <div class="control">
-                                <input class="input" type="text" name="phone" v-model="phone">
+                                <input class="input" type="text" name="phone" v-model="phone" required>
                             </div>
                         </div>
                     </div>
@@ -141,15 +141,15 @@
                             <label>Address</label>
     
                             <div class="control">
-                                <input class="input" type="text" name="address" v-model="address">
+                                <input class="input" type="text" name="address" v-model="address" required>
                             </div>
                         </div>
     
                         <div class="field">
-                            <label>Zip code</label>
+                            <label>Pin code</label>
     
                             <div class="control">
-                                <input class="input" type="text" name="zipcode" v-model="zipcode">
+                                <input class="input" type="text" name="zipcode" v-model="zipcode" required>
                             </div>
                         </div>
     
@@ -157,7 +157,7 @@
                             <label>Place</label>
     
                             <div class="control">
-                                <input class="input" type="text" name="place" v-model="place">
+                                <input class="input" type="text" name="place" v-model="place" required>
                             </div>
                         </div>
                     </div>
@@ -171,12 +171,9 @@
                     </div>
                 </div>
                 <div v-if="errors.length > 0">
-                    <article class="message is-danger"
-                        v-for="error in errors"
-                    >
-                        <div class="message-header">
-                            <p>Error</p>
-                        </div>
+                    <article class="message is-warning"
+                        v-for="error in errors">
+                        
                         <div class="message-body">
                             [[ error ]]
                         </div>
