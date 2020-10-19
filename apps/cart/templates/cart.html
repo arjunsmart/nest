@@ -22,8 +22,8 @@
         {% if cart %}
             <div v-if="products.length > 0">
                 <div class="table">
-                    <table class="table is-fullwidth is-striped">
-                        <thead>
+                    <table class="table is-striped is-fullwidth">
+                        <thead class="is-centered">
                             <th></th>
                             <th>Product</th>
                             <th>Quantity</th>
@@ -31,7 +31,7 @@
                             <th></th>
                         </thead>
 
-                        <tbody>
+                        <tbody class="mt-2">
                             <tr v-for="product in products">
                                 <td>
                                     <figure class="image is-48x48">

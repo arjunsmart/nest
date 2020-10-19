@@ -1,0 +1,5 @@
+.env
+db.sqlite3
+nginx_saulgadgets.conf
+supervisor_saulgadgets.conf
+

@@ -34,7 +34,7 @@
             <div style="text-align: center;">
         <h1 class="title">{{ product.title }}</h1>
         <h2 class="subtitle">₹{{ product.price|intcomma }} </h2>
-    <p>Ratings : {% if product.get_rating == 0 %}No ratings yet{% else %}{{ product.get_rating|floatformat:1 }}{% endif %}</p>
+    <p><i class="fa fa-star"></i>Ratings : {% if product.get_rating == 0 %}No ratings yet{% else %}{{ product.get_rating|floatformat:1 }}/5.0{% endif %}</p>
 
 
         {% if product.description %}
@@ -155,7 +155,7 @@
                 <div class="notification space-below">
                     <p>
                         <strong>Date: </strong>{{ review.date_added|date:"Y-m-d" }},
-                        <strong>Stars: </strong>{{ review.stars }}
+                        <strong><i class="fa fa-star"></i> </strong>{{ review.stars }}/5
                     </p>
 
                     {{ review.content }}
