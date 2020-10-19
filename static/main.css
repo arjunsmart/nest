@@ -1,7 +1,16 @@
+h1 {
+    text-transform: capitalize;
+}
+
+.title {
+    text-transform: capitalize;
+}
+
 form .helptext {
     font-size: 12px;
     color: #ccc;
 }
+
 
 form ul:not(.errorlist) {
     display: none;

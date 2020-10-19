@@ -7,7 +7,7 @@
 {% block content %}
 <div class="container">
     <div id="productapp">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <nav class="breadcrumb is-capitalized" aria-label="breadcrumbs">
             <ul>
                 <li><a href="{% url 'frontpage' %}">Home</a></li>
                 {% if product.category.parent %}
@@ -38,7 +38,7 @@
 
 
         {% if product.description %}
-            <p>Desc :{{ product.description }}</p>
+            <p class="is-capitalized mb-2">Desc :{{ product.description }}</p>
         {% endif %}
 
         
@@ -58,7 +58,7 @@
                                     </figure>
                                 </td>
 
-                                <td>
+                                <td class="is-capitalized">
                                     {{ product.title }}
                                 </td>
 
@@ -85,7 +85,7 @@
                                         </figure>
                                     </td>
 
-                                    <td>
+                                    <td class="is-capitalized">
                                         {{ variant.title }}
                                     </td>
 
