@@ -1,18 +1,19 @@
 
 import os
-from decouple import config
+#from decouple import config
 
 from pathlib import Path
 
 #Razorpay Credentials
 
-RAZORPAY_API_KEY_PUBLISHABLE = config('RAZORPAY_API_KEY_PUBLISHABLE')
-RAZORPAY_API_KEY_HIDDEN = config('RAZORPAY_API_KEY_HIDDEN')
+RAZORPAY_API_KEY_PUBLISHABLE = 'rzp_test_yXRx5KMNXszyBZ'
+RAZORPAY_API_KEY_HIDDEN = 'M7UOx3sp90nOyppE1I0sJBo3'
 
 #Stripe Credentials
 
-STRIPE_API_KEY_PUBLISHABLE = config('STRIPE_API_KEY_PUBLISHABLE')
-STRIPE_API_KEY_HIDDEN = config('STRIPE_API_KEY_HIDDEN')
+STRIPE_API_KEY_PUBLISHABLE = 'pk_test_51HExIMKDElO4WcAHfqjndMm4KvMfCTIikx1gCAaHs2sKNe9jLkAnxEKPnGpppHr093cwO9FwhsGrxnk4nFhiXUJj00gHy36hXk'
+STRIPE_API_KEY_HIDDEN = 'sk_test_51HExIMKDElO4WcAHQz4emdMtWFygfDJxq73kL0clriKKj650kl1s2UNwXnlPg7dAwvyIfMCaGPFb4MTVt97VumYC009JAUDZZ9'
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 #BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -23,10 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'w(usn!n0dl=p5uhdwgo=n2d9@pb+)y0k63)2v9h447x7m)dw1f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG')
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -170,5 +171,5 @@ EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST ='smtp.gmail.com'
 EMAIL_PORT =587
 EMAIL_USE_TLS =True
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER ='knagaraju1980@gmail.com'
+EMAIL_HOST_PASSWORD = ''

@@ -114,20 +114,22 @@
 
 		{% include 'parts/newsletter.html' %}
 
-		<footer class="footer">
-			<div class="columns">
+		<footer class="footer has-background-black ">
+			<div class="columns has-text-white ">
 				<div class="column is-4">
 					<h2 class="subtitle">Farmers Nest</h2>
 				</div>
 
 				<div class="column is-8">
-					<a href="{% url 'contact' %}" class="navbar-item">Contact</a>
-					<a href="{% url 'about' %}" class="navbar-item">About</a>
+					<div><a href="{% url 'contact' %}" >Contact</a></div>
+					<div><a href="{% url 'about' %}" >About</a></div>
+					
 				</div>
+				
 			</div>
 			
 		</footer>
-		<div class="has-background-grey has-text-white bottom">
+		<div class="has-background-dark has-text-white bottom">
 			<div class="container is-fluid">
 			  <div class="columns">
 				<div class="column is-4 is-white">
