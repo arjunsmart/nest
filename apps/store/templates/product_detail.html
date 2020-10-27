@@ -34,7 +34,8 @@
             <div style="text-align: center;">
         <h1 class="title">{{ product.title }}</h1>
         <h2 class="subtitle">₹{{ product.price|intcomma }} </h2>
-    <p><i class="fa fa-star"></i>Ratings : {% if product.get_rating == 0 %}No ratings yet{% else %}{{ product.get_rating|floatformat:1 }}/5.0{% endif %}</p>
+    <p><i class="fa fa-star"></i>Ratings : {% if product.get_rating == 0 %}No ratings yet{% else %}{{ product.get_rating|floatformat:1 }}/5.0{% endif %}
+     <span><div class="views"><i class="fa fa-eye"></i> {{ product.num_visits}}</div></span></p>
 
 
         {% if product.description %}
@@ -129,8 +130,8 @@
 </div>
 {% if product.images.all %}
             
-            <div class="columns">
-                <div class="column is-2 " v-for="image in images">
+            <div class="columns is-mobile">
+                <div class="column is-2" v-for="image in images">
                     <figure class="image card">
                         <img :src="image.thumbnail" @click="changeMainImage(image.image)">
                     </figure>

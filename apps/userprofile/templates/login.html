@@ -3,9 +3,8 @@
 {% block content %}
 
 
-<section class="hero is-fullheight">
-    <div class="hero-body">
-        <div class="container has-text-centered">
+<section>
+        <div class="columns has-text-centered">
             <div class="column is-4 is-offset-4">
                 <h3 class="title has-text-black">Login</h3>
                 <hr class="login-hr">
@@ -27,7 +26,7 @@
 
                         <div class="field">
                             <div class="control">
-                                <input class="input is-large" type="password" placeholder="Your Password"name="password" id="id_password">
+                                <input class="input is-large is-fullwidth" type="password" placeholder="Your Password"name="password" id="id_password">
                             </div>                            
                         </div>
                         
@@ -45,6 +44,6 @@
                 </p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
 {% endblock %}

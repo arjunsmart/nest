@@ -1,6 +1,3 @@
-.env
 db.sqlite3
-nginx_saulgadgets.conf
-supervisor_saulgadgets.conf
-gunicorn_start
-settingsprod.py
+production
+.env
